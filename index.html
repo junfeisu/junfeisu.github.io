@@ -116,7 +116,7 @@
 				
 				<section class="switch-part switch-part2">
 					<div class="widget tagcloud" id="js-tagcloud">
-						<a href="/tags/前端-JavaScript-DOM/" style="font-size: 10px;">前端 JavaScript DOM</a>
+						<a href="/tags/Blog/" style="font-size: 10px;">Blog</a> <a href="/tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="/tags/前端/" style="font-size: 10px;">前端</a> <a href="/tags/前端-JavaScript-DOM/" style="font-size: 10px;">前端 JavaScript DOM</a>
 					</div>
 				</section>
 				
@@ -201,6 +201,63 @@
 </nav>
 
       <div class="body-wrap">
+  
+    <article id="&#39;关于hexo和github-page搭建免费博客的各种坑" class="article article-type-&#39;关于hexo和github" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/03/24/page搭建免费博客的各种坑/" class="article-date">
+  	<time datetime="2016-03-24T09:28:13.000Z" itemprop="datePublished">2016-03-24</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/03/24/page搭建免费博客的各种坑/">Hexo和Github Page搭建免费博客的各种坑&#39;</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="Hexo和Github-page搭建免费博客"><a href="#Hexo和Github-page搭建免费博客" class="headerlink" title="Hexo和Github page搭建免费博客"></a>Hexo和Github page搭建免费博客</h2><h5 id="1、首先下载node-git-然后github-的账号-必备"><a href="#1、首先下载node-git-然后github-的账号-必备" class="headerlink" title="1、首先下载node,git,然后github 的账号(必备);"></a>1、首先下载node,git,然后github 的账号(必备);</h5><h5 id="2、装hexo-npm-install-g-hexo-cli"><a href="#2、装hexo-npm-install-g-hexo-cli" class="headerlink" title="2、装hexo,npm install -g hexo-cli"></a>2、装hexo,npm install -g hexo-cli</h5><h5 id="3、装好之后就先创建一个博客文件夹，然后在这文件夹里git-bash-先hexo-init创建项目目录，如图："><a href="#3、装好之后就先创建一个博客文件夹，然后在这文件夹里git-bash-先hexo-init创建项目目录，如图：" class="headerlink" title="3、装好之后就先创建一个博客文件夹，然后在这文件夹里git bash,先hexo init创建项目目录，如图："></a>3、装好之后就先创建一个博客文件夹，然后在这文件夹里git bash,先hexo init创建项目目录，如图：<br><img src="http://7xrp7o.com1.z0.glb.clouddn.com/hexo_folder.png" alt="hexo初始化项目目录"></h5><p>然后再去配置config_yml，<em>第一个坑出现</em>，<span style="color:#d39557">配置各个选项的值得时候就需要先打一个空格再去配置值不然就会报错</span>,如：title: your title</p>
+<h5 id="4、第二个坑就是配置deploy选项的时候就先要配置类型，不要写成github，现在的版本就是git，然后还要装一个库，npm-install-hexo-deployer-git-–save-然后就是配置github你的git-hub-page仓库的地址时要用ssh模式的，不要用http模式的不然deploy的时候就会说没有权限。"><a href="#4、第二个坑就是配置deploy选项的时候就先要配置类型，不要写成github，现在的版本就是git，然后还要装一个库，npm-install-hexo-deployer-git-–save-然后就是配置github你的git-hub-page仓库的地址时要用ssh模式的，不要用http模式的不然deploy的时候就会说没有权限。" class="headerlink" title="4、第二个坑就是配置deploy选项的时候就先要配置类型，不要写成github，现在的版本就是git，然后还要装一个库，npm install hexo-deployer-git –save;然后就是配置github你的git hub page仓库的地址时要用ssh模式的，不要用http模式的不然deploy的时候就会说没有权限。"></a>4、第二个坑就是配置deploy选项的时候就先要配置类型，不要写成github，现在的版本就是git，然后还要装一个库，npm install hexo-deployer-git –save;然后就是配置github你的git hub page仓库的地址时要用ssh模式的，不要用http模式的不然deploy的时候就会说没有权限。</h5><h5 id="5、第三个坑就是配置主题的时候去github上clone下人家的代码的时候要进入到你的博客文件夹下面的theme文件夹下再clone"><a href="#5、第三个坑就是配置主题的时候去github上clone下人家的代码的时候要进入到你的博客文件夹下面的theme文件夹下再clone" class="headerlink" title="5、第三个坑就是配置主题的时候去github上clone下人家的代码的时候要进入到你的博客文件夹下面的theme文件夹下再clone"></a>5、第三个坑就是配置主题的时候去github上clone下人家的代码的时候要进入到你的博客文件夹下面的theme文件夹下再clone</h5><h5 id="6、hexo-n-‘md文件的名字’，可以再source文件夹里面找到，hexo-g-生成public文件，就是将你的-md文件转换成HTML格式的文件存放在public文件夹里面-hexo-d就是将你的代码push到你的github仓库里；hexo-server就是运行hexo的本地服务器，监听的端口默认是4000。"><a href="#6、hexo-n-‘md文件的名字’，可以再source文件夹里面找到，hexo-g-生成public文件，就是将你的-md文件转换成HTML格式的文件存放在public文件夹里面-hexo-d就是将你的代码push到你的github仓库里；hexo-server就是运行hexo的本地服务器，监听的端口默认是4000。" class="headerlink" title="6、hexo n ‘md文件的名字’，可以再source文件夹里面找到，hexo g 生成public文件，就是将你的.md文件转换成HTML格式的文件存放在public文件夹里面;hexo d就是将你的代码push到你的github仓库里；hexo server就是运行hexo的本地服务器，监听的端口默认是4000。"></a>6、hexo n ‘md文件的名字’，可以再source文件夹里面找到，hexo g 生成public文件，就是将你的.md文件转换成HTML格式的文件存放在public文件夹里面;hexo d就是将你的代码push到你的github仓库里；hexo server就是运行hexo的本地服务器，监听的端口默认是4000。</h5><h5 id="7、第四个坑就是你想删除一个博客怎么办，如果你只将source文件夹下的md文件删掉是不行的，因为根据md文件他还生成了一堆文件-这是需要的就是hexo-clean命令，他会删除整个public文件夹，然后再将根目录下的db-json删除。这时你在hexo-g重新生成public文件就会删除掉你想删除掉的博客"><a href="#7、第四个坑就是你想删除一个博客怎么办，如果你只将source文件夹下的md文件删掉是不行的，因为根据md文件他还生成了一堆文件-这是需要的就是hexo-clean命令，他会删除整个public文件夹，然后再将根目录下的db-json删除。这时你在hexo-g重新生成public文件就会删除掉你想删除掉的博客" class="headerlink" title="7、第四个坑就是你想删除一个博客怎么办，如果你只将source文件夹下的md文件删掉是不行的，因为根据md文件他还生成了一堆文件.这是需要的就是hexo clean命令，他会删除整个public文件夹，然后再将根目录下的db.json删除。这时你在hexo g重新生成public文件就会删除掉你想删除掉的博客"></a>7、第四个坑就是你想删除一个博客怎么办，如果你只将source文件夹下的md文件删掉是不行的，因为根据md文件他还生成了一堆文件.这是需要的就是hexo clean命令，他会删除整个public文件夹，然后再将根目录下的db.json删除。这时你在hexo g重新生成public文件就会删除掉你想删除掉的博客</h5>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Blog/">Blog</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hexo/">Hexo</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/前端/">前端</a></li></ul>
+	</div>
+
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
   
     <article id="post-DOM各种问题" class="article article-type-post" itemscope itemprop="blogPost">
   
