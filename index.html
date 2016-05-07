@@ -79,7 +79,7 @@
 						<li>Links</li>
 						
 						
-						<li>Über</li>
+						<li>About</li>
 						
 					</ul>
 				</div>
@@ -116,7 +116,7 @@
 				
 				<section class="switch-part switch-part2">
 					<div class="widget tagcloud" id="js-tagcloud">
-						<a href="/tags/Blog/" style="font-size: 10px;">Blog</a> <a href="/tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="/tags/RegExp/" style="font-size: 10px;">RegExp</a> <a href="/tags/js/" style="font-size: 10px;">js</a> <a href="/tags/前端/" style="font-size: 10px;">前端</a> <a href="/tags/前端-JavaScript-DOM/" style="font-size: 10px;">前端 JavaScript DOM</a> <a href="/tags/前端-angular-directive/" style="font-size: 10px;">前端 angular directive</a> <a href="/tags/正则表达式/" style="font-size: 10px;">正则表达式</a>
+						<a href="/tags/Blog/" style="font-size: 10px;">Blog</a> <a href="/tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="/tags/RegExp/" style="font-size: 10px;">RegExp</a> <a href="/tags/js/" style="font-size: 20px;">js</a> <a href="/tags/前端/" style="font-size: 20px;">前端</a> <a href="/tags/前端-JavaScript-DOM/" style="font-size: 10px;">前端 JavaScript DOM</a> <a href="/tags/前端-angular-directive/" style="font-size: 10px;">前端 angular directive</a> <a href="/tags/小技巧/" style="font-size: 10px;">小技巧</a> <a href="/tags/正则表达式/" style="font-size: 10px;">正则表达式</a>
 					</div>
 				</section>
 				
@@ -201,6 +201,88 @@
 </nav>
 
       <div class="body-wrap">
+  
+    <article id="post-us项目小经验加坑" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/05/05/us项目小经验加坑/" class="article-date">
+  	<time datetime="2016-05-05T14:42:07.000Z" itemprop="datePublished">2016-05-05</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/05/05/us项目小经验加坑/">us项目小经验加坑</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="js按照属性排序"><a href="#js按照属性排序" class="headerlink" title="js按照属性排序"></a>js按照属性排序</h2><h5 id="通常在项目中后台会返回一个json对象数组给我们，并且是无序的，而在页面上我们需要按照一定的顺序排序，通常是按照某个属性来进行排序的，那么怎么按照某个属性给一个元素都是对象的数组进行排序。"><a href="#通常在项目中后台会返回一个json对象数组给我们，并且是无序的，而在页面上我们需要按照一定的顺序排序，通常是按照某个属性来进行排序的，那么怎么按照某个属性给一个元素都是对象的数组进行排序。" class="headerlink" title="通常在项目中后台会返回一个json对象数组给我们，并且是无序的，而在页面上我们需要按照一定的顺序排序，通常是按照某个属性来进行排序的，那么怎么按照某个属性给一个元素都是对象的数组进行排序。"></a>通常在项目中后台会返回一个json对象数组给我们，并且是无序的，而在页面上我们需要按照一定的顺序排序，通常是按照某个属性来进行排序的，那么怎么按照某个属性给一个元素都是对象的数组进行排序。</h5><pre><code>var arr=[
+    {age:13,name:&apos;sdsd&apos;},
+    {age:12,name:&apos;ewewr&apos;},
+    {age:10,name:&apos;fdggf&apos;}
+]
+</code></pre><h5 id="我们想按照age这个属性来进行排序。"><a href="#我们想按照age这个属性来进行排序。" class="headerlink" title="我们想按照age这个属性来进行排序。"></a>我们想按照age这个属性来进行排序。</h5><pre><code>function sortArr(property,objArr){
+    return objArr.sort(obj1,obj2){
+        var val1=obj1[property],
+            val2=obj2[property];
+        return val1-val2;    //这是按升序排的，要按降序排的话就把val1和val2的顺序对调
+    }
+}
+sortArr(&apos;age&apos;,arr);  
+--&gt; var arr=[
+    {age:10,name:&apos;fdggf&apos;},
+    {age:12,name:&apos;ewewr&apos;},
+    {age:13,name:&apos;sdsd&apos;}
+]
+</code></pre><h2 id="json数据缓存sessionStorage或者localStorage"><a href="#json数据缓存sessionStorage或者localStorage" class="headerlink" title="json数据缓存sessionStorage或者localStorage"></a>json数据缓存sessionStorage或者localStorage</h2><h5 id="众所周知的是，无论什么类型的数据存入sessionStorage或者localStorage或者cookie之后都会被转换成字符类型，如："><a href="#众所周知的是，无论什么类型的数据存入sessionStorage或者localStorage或者cookie之后都会被转换成字符类型，如：" class="headerlink" title="众所周知的是，无论什么类型的数据存入sessionStorage或者localStorage或者cookie之后都会被转换成字符类型，如："></a>众所周知的是，无论什么类型的数据存入sessionStorage或者localStorage或者cookie之后都会被转换成字符类型，如：<img src="http://7xrp7o.com1.z0.glb.clouddn.com/localStorage.png" alt="存入之后变成string"></h5><h5 id="那么我们怎么将这个字符串取出来之后变成和原来一样的数据类型呢-这里的就是json类型的数组-我们一开始会想的是不是用split-‘-’-方法想办法拆分成数组，但是取出来的结果是这样的。所以这种方法是不可行的，最简单的方法就是一开始咱们就将这个json数组转换成json类型的字符串存入到sessionStorage里面，然后取出来的时候咱们再用JSON-parse-方法将json类型的字符串转换成JSON数组，其实这个方法我们是投机使用了JSON数据类型提供给我们的类型转换方法。具体如下"><a href="#那么我们怎么将这个字符串取出来之后变成和原来一样的数据类型呢-这里的就是json类型的数组-我们一开始会想的是不是用split-‘-’-方法想办法拆分成数组，但是取出来的结果是这样的。所以这种方法是不可行的，最简单的方法就是一开始咱们就将这个json数组转换成json类型的字符串存入到sessionStorage里面，然后取出来的时候咱们再用JSON-parse-方法将json类型的字符串转换成JSON数组，其实这个方法我们是投机使用了JSON数据类型提供给我们的类型转换方法。具体如下" class="headerlink" title="那么我们怎么将这个字符串取出来之后变成和原来一样的数据类型呢(这里的就是json类型的数组)我们一开始会想的是不是用split(‘,’)方法想办法拆分成数组，但是取出来的结果是这样的。所以这种方法是不可行的，最简单的方法就是一开始咱们就将这个json数组转换成json类型的字符串存入到sessionStorage里面，然后取出来的时候咱们再用JSON.parse()方法将json类型的字符串转换成JSON数组，其实这个方法我们是投机使用了JSON数据类型提供给我们的类型转换方法。具体如下:"></a>那么我们怎么将这个字符串取出来之后变成和原来一样的数据类型呢(这里的就是json类型的数组)我们一开始会想的是不是用split(‘,’)方法想办法拆分成数组，但是取出来的结果是这样的。<img src="http://7xrp7o.com1.z0.glb.clouddn.com/session.png" alt="每个元素对象还是字符串">所以这种方法是不可行的，最简单的方法就是一开始咱们就将这个json数组转换成json类型的字符串存入到sessionStorage里面，然后取出来的时候咱们再用JSON.parse()方法将json类型的字符串转换成JSON数组，其实这个方法我们是投机使用了JSON数据类型提供给我们的类型转换方法。具体如下:</h5><pre><code>var arr=[
+    {age:10,name:&apos;fdggf&apos;},
+    {age:12,name:&apos;ewewr&apos;},
+    {age:13,name:&apos;sdsd&apos;}
+];
+sessionStorage.setItem(&apos;abc&apos;,JSON.stringify(arr));
+JSON.parse(sessionStorage.getItem(&apos;abc&apos;));
+</code></pre><p><img src="http://7xrp7o.com1.z0.glb.clouddn.com/result.png" alt="具体示例"></p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js/">js</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/前端/">前端</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/小技巧/">小技巧</a></li></ul>
+	</div>
+
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
   
     <article id="post-正则表达式起航" class="article article-type-post" itemscope itemprop="blogPost">
   
@@ -432,7 +514,7 @@ app.directive(&apos;myDirectiveThree&apos;,directiveFunction(&apos;myDirecitve3&
 
 
   
-    <article id="&#39;关于hexo和github-page搭建免费博客的各种坑" class="article article-type-&#39;关于hexo和github" itemscope itemprop="blogPost">
+    <article id="关于hexo和github-page搭建免费博客的各种坑" class="article article-type-关于hexo和github" itemscope itemprop="blogPost">
   
     <div class="article-meta">
       <a href="/2016/03/24/page搭建免费博客的各种坑/" class="article-date">
